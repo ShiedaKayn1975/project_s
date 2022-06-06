@@ -1,0 +1,3 @@
+:schedule:
+  LoadMoneyJob:
+    cron: '0 * * * * *'

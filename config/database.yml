@@ -1,0 +1,22 @@
+default: &default
+  adapter : postgresql
+  encoding: unicode
+  timeout : 5000
+  pool    : <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  port    : <%= ENV['PECK_PORTAL_DATABASE_PORT'] %> 
+  host    : <%= ENV['PECK_PORTAL_DATABASE_HOST'] %>
+  username: <%= ENV['PECK_PORTAL_DATABASE_USERNAME'] %> 
+  password: <%= ENV['PECK_PORTAL_DATABASE_PASSWORD'] %> 
+
+development:
+  database: <%= ENV['PECK_PORTAL_DATABASE_NAME'] %>
+  <<      : *default
+
+test:
+  database: <%= ENV['PECK_PORTAL_DATABASE_NAME'] %>
+  <<      : *default
+
+production:
+  database: <%= ENV['PECK_PORTAL_DATABASE_NAME'] %>
+  <<      : *default
+
