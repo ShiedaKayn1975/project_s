@@ -1,8 +1,8 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.17.0"
 
-set :application, "cupcake"
-set :repo_url, "https://github.com/ShiedaKayn1975/cupcake.git"
+set :application, "project_s"
+set :repo_url, "https://github.com/ShiedaKayn1975/project_s"
 
 set :rvm_type, :system                # Defaults to: :auto
 # set :rvm_ruby_version, '2.7.1'      # Defaults to: 'default'
