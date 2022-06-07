@@ -8,7 +8,7 @@ set :rvm_type, :system                # Defaults to: :auto
 # set :rvm_ruby_version, '2.7.1'      # Defaults to: 'default'
 # set :rvm_custom_path, '~/.myveryownrvm'  # only needed if not detected
 
-set :deploy_to, "/home/ubuntu/apps/project_s"
+set :deploy_to, "/root/apps/project_s"
 set :pty,             true
 set :stage,           :production
 set :puma_threads,    [4, 16]
