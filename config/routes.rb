@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       post 'change_password', to: 'sessions#change_password'
       get  'profile', to: 'me#profile'
       get  'get_trading_history', to: 'action_logs#get_trading_history'
+      get  'hello', to: 'hello#hello'
 
       jsonapi_resources :users do
         resources :actions, only: [:create, :index]
