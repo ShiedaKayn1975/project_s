@@ -8,5 +8,5 @@ set :deploy_to, "/home/root/apps/project_s"
 set :ssh_options, {
   forward_agent: true,
   auth_methods: %w[publickey],
-  keys: %w(../.ssh/bantk.pub)
+  keys: %w(../.ssh/bantk)
 }
