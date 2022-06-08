@@ -47,7 +47,7 @@ RedisClassy.redis = Redis.new(
 )
 
 # Get rid of warning message: Redis#exists(key)` will return an Integer in redis-rb 4.3. `exists?` returns a boolean, you should use it instead
-Redis.exists_returns_integer = false
+# Redis.exists_returns_integer = false
 
 if ENV['WITH_SCHEDULER']
 else
