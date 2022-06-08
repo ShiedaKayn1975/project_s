@@ -57,6 +57,6 @@ namespace :deploy do
   # end
 
   # after  :finishing,    :compile_assets
-  after  :finishing,    :cleanup
+  # after  :finishing,    :cleanup
   after  :finishing,    :restart
 end
