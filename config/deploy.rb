@@ -22,7 +22,7 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to true if using ActiveRecord
 
-set :linked_files, fetch(:linked_files, []).push("config/master.key", "config/database.yml")
+set :linked_files, fetch(:linked_files, []).push("config/master.key")
 append :linked_files, ".env"
 append :linked_dirs, "public"
 append :linked_dirs, "storage"
