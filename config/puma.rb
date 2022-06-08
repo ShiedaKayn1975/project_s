@@ -17,7 +17,7 @@ port        ENV.fetch("PORT") { 3010 }
 environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Specifies the `pidfile` that Puma will use.
-bind "unix://root/apps/project_s/shared/tmp/sockets/puma.sock"
+bind "unix:/root/apps/project_s/shared/tmp/sockets/puma.sock"
 pidfile '/root/apps/project_s/shared/tmp/pids/puma.pid'
 state_path '/root/apps/project_s/shared/tmp/pids/puma.state'
 
