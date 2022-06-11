@@ -1,4 +1,4 @@
-server "103.98.152.77", user: "ubuntu", roles: %w(web app db), primary: true
+server "103.98.152.77", user: "root", roles: %w(web app db), primary: true
 
 set :stage, :production
 set :rails_env, :production

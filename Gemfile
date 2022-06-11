@@ -52,6 +52,7 @@ gem 'capistrano-rails',   '~> 1.1', require: false
 gem 'capistrano-bundler', '~> 1.1', require: false
 gem 'capistrano-rbenv', '~> 2.0', require: false
 gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+gem 'listen', '~> 3.2'
 
 group :development, :test do
   gem 'pry-rails'
