@@ -1,7 +1,7 @@
 class Ticket < ApplicationRecord
-  has_many :comments, foreign_key: 'object_id', :as => :object
-  belongs_to :creator, class_name: 'User', foreign_key: :creator_id
-  
+  has_many :comments, foreign_key: 'object_id', class_name: 'Comment'
+  has_one :creator, :class_name => 'User', :foreign_key => 'id', :primary_key => 'creator_id'
+
   after_create :generate_code
   include Actionable
 

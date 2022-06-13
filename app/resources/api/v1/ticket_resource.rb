@@ -1,6 +1,6 @@
 class Api::V1::TicketResource < Api::V1::BaseResource
   attributes :id, :content, :code, :status, :creator_id, :created_at, :updated_at
-
+	has_many :comments
 	before_save :add_creator_and_status
 
 	private
