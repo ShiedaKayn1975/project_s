@@ -22,6 +22,10 @@ Rails.application.routes.draw do
 
       jsonapi_resources :transactions
 
+      jsonapi_resources :tickets do
+        resources :actions, only: [:create, :index]
+      end
+
       jsonapi_resources :variants do 
         collection do 
           post :import_variants

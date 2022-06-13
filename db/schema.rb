@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_30_160700) do
+ActiveRecord::Schema.define(version: 2022_06_13_110716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 2022_05_30_160700) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["actionable_type"], name: "index_action_logs_on_actionable_type"
     t.index ["actor_id"], name: "index_action_logs_on_actor_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "creator_id"
+    t.string "object_type"
+    t.bigint "object_id"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "import_logs", force: :cascade do |t|
@@ -57,6 +66,25 @@ ActiveRecord::Schema.define(version: 2022_05_30_160700) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "kind"
     t.string "commitions", array: true
+  end
+
+  create_table "resource_comments", force: :cascade do |t|
+    t.string "object_type"
+    t.bigint "object_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["object_id"], name: "index_resource_comments_on_object_id"
+    t.index ["object_type"], name: "index_resource_comments_on_object_type"
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.text "content"
+    t.bigint "creator_id"
+    t.string "status"
+    t.datetime "resolved_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "code"
   end
 
   create_table "transactions", force: :cascade do |t|
