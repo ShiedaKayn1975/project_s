@@ -1,6 +1,6 @@
 class UserPolicy < BasePolicy
   def index?
-    user.admin
+    true
   end
 
   def create?
@@ -8,7 +8,7 @@ class UserPolicy < BasePolicy
   end
 
   def show?
-    user.admin
+    true
   end
 
   def update?

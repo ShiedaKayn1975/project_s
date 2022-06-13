@@ -5,4 +5,9 @@ class Api::V1::UserResource < Api::V1::BaseResource
     return nil unless context[:user].admin?
     @model.balance
   end
+
+  def phone
+    return nil unless context[:user].admin?
+    @model.phone
+  end
 end
