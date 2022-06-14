@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get  'profile', to: 'me#profile'
       get  'get_trading_history', to: 'action_logs#get_trading_history'
       get  'hello', to: 'hello#hello'
+      post '2fa' , to: 'tools#get_2fa'
 
       jsonapi_resources :users do
         resources :actions, only: [:create, :index]
