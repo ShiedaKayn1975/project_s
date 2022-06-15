@@ -50,12 +50,12 @@ class Api::V1::VariantsController < Api::V1::ApiController
       message: "File and kind required!"
     }, status: 400 if (file.blank? || product_id.blank?)
 
-    input_file = CupcakeService.new.upload file.tempfile, {
-      filename: file.original_filename,
-      content_type: file.content_type,
-      public: false,
-      namespace: "datn/import_logs/#{context[:user].id}"
-    }
+    # input_file = CupcakeService.new.upload file.tempfile, {
+    #   filename: file.original_filename,
+    #   content_type: file.content_type,
+    #   public: false,
+    #   namespace: "datn/import_logs/#{context[:user].id}"
+    # }
 
     # Create log
     log = ImportLog.create!(
@@ -63,7 +63,7 @@ class Api::V1::VariantsController < Api::V1::ApiController
       importer_id: context[:user].id,
       status: 'created',
       request: {
-        file: input_file['file_url']
+        # file: input_file['file_url']
       }
     )
         
