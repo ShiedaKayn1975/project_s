@@ -50,7 +50,7 @@ class Product < ApplicationRecord
       total = variants.count*price
       balance = context[:actor].balance || 0
 
-      if total < balance
+      if total <= balance
         remaining_balance = balance - total
         context[:actor].balance = remaining_balance
         context[:actor].save
