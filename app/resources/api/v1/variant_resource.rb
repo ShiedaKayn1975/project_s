@@ -10,4 +10,8 @@ class Api::V1::VariantResource < Api::V1::BaseResource
   filter :product_ids, apply: ->(records, value, _options) {
     records.where(product_id: value[0])
   }
+
+  filter :status, apply: ->(records, value, _options) {
+    records.where(status: value[0])
+  }
 end
