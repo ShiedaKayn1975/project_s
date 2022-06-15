@@ -7,6 +7,10 @@ class Api::V1::ProductResource < Api::V1::BaseResource
   filter :kind, apply: ->(records, value, _options) {
     records.where("kind = ?", value[0])
   }
+
+  filter :title, apply: ->(records, value, _options) {
+    records.where("LOWER(title) LIKE ?", "%#{value[0].downcase}%")
+  }
   # def creator_id
   #   if context[:user].admin?
   #     @model.creator_id
